@@ -1,8 +1,8 @@
-# Titulo del Post
+# Hola Blog
 
 ## Formato
 
-Esto es Markdown
+*Esto es Markdown*
 
 ## Formato titulo
 
