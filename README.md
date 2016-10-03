@@ -44,6 +44,8 @@ Este link nos lleva a la siguiente interfaz:
 
 Haciendo click en "Ver Review" se veran los cambios indicados por el editor.
 
+![Viendo Review](.images/viendo_review.png)
+
 Para realizar los cambios debera seleccionarse el archivo del post, realizar los cambios y volver a realizar el *commit*, asi:
 
 ![Cambios](.images/haciendo_cambios.png)
