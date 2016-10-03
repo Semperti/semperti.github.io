@@ -2,7 +2,7 @@
 
 ## Instrucciones para aportar
 
-Para poder aportar lo primero que debe suceder es ser invitado a formar parte de la organizacion de GitHub de Semperti en calidad de escritor.
+Para poder aportar lo primero que debe suceder es ser invitado a formar parte de la organización de GitHub de Semperti en calidad de escritor.
 
 Para esto se debera enviar el usuario de GitHub a blog@semperti.com.
 
