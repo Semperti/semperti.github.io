@@ -6,7 +6,7 @@ Para poder aportar lo primero que debe suceder es ser invitado a formar parte de
 
 Para esto se debera enviar el usuario de GitHub a blog@semperti.com.
 
-Cuando esto suceda se recivira una notificacion via mail la cual debera ser aceptada.
+Cuando esto suceda se recibira una notificacion via mail la cual debera ser aceptada.
 
 Una vez dentro de la organizacion se debera seleccionar el repositorio Semperti/semperti.github.io e ir al directorio \_posts como indica la imagen:
 
