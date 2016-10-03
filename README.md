@@ -1,4 +1,4 @@
-# semperti.github.io
+# Blog Técnico de Semperti
 Blog técnico de Semperti.
 
 ## Instrucciones para aportar
