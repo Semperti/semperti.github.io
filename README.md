@@ -47,7 +47,7 @@ Haciendo click en "Ver Review" se veran los cambios indicados por el editor.
 
 Para realizar los cambios debera seleccionarse el archivo del post, realizar los cambios y volver a realizar el *commit*, asi:
 
-![Cambios](haciendo_cambios.png)
+![Cambios](.images/haciendo_cambios.png)
 
 Este proceso podra repetirse hasta que esten todos los cambios aceptados y el post se incluya en el *master*.
 
@@ -58,6 +58,8 @@ Si bien este instructivo apunta a utilizar la interfaz propuesta por GitHub, al 
 ### Info Adicional
 
 [Guia Markdown](https://guides.github.com/features/mastering-markdown/)
+
 [Guia Jekyll](https://jekyllrb.com/docs/posts/)
+
 [Guia Git](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
 
