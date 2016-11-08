@@ -1,0 +1,142 @@
+[
+  {
+    "nombre": "Nicol&aacute;s Cisco",
+    "avatar": "av-cisco",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-twitter",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "Pablo Halamaj",
+    "avatar": "av-halamaj",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-twitter",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "Rodrigo Burdet",
+    "avatar": "av-burdet",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-twitter",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "Federico Colangelo",
+    "avatar": "av-colangelo",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-twitter",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "David Pasqua",
+    "avatar": "av-pasqua",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "Nahuel Persia",
+    "avatar": "av-persia",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-twitter",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "Franco Petronczak",
+    "avatar": "av-petronczak",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-twitter",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  },
+  {
+    "nombre": "Eduardo Speciali",
+    "avatar": "av-speciali",
+    "cargo": "Desarrollador",
+    "links": [
+                {
+                  "icon": "fa-facebook",
+                  "link": ""
+                },
+                {
+                  "icon": "fa-linkedin",
+                  "link": ""
+                }
+            ]
+  }
+]

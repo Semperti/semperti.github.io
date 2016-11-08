@@ -1,0 +1,26 @@
+---
+layout: page
+title: Equipo
+permalink: /equipo/
+---
+
+{% for miembro in site.data.equipo %}
+<div class="avatar-equipo">
+  <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+  <div class="flipper">
+    <div class="front">
+      <img src="{{ site.github.url }}/static/img/avatars/{{ miembro.avatar }}.png" />
+    </div>
+    <div class="back">
+      <h4 style="font-weight: bold">{{ miembro.nombre }}</h3>
+      <h5 style="width: 100%">{{ miembro.cargo }}</h4>
+      <div class="social-icons" style="margin-bottom: 10%;">
+      	{% for link in miembro.links %}
+          <a class="icon" style="color: #30302f" target="_blank" href="{{ link.link }}"><i class="fa {{ link.icon }}"></i></a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+{% endfor %}

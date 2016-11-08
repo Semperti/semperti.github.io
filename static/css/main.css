@@ -1,15 +1,23 @@
 .main.outer{padding-top: 50px;}
 .header-panel.shadow-z-2 {
-    background-color: #ff821f;
+    background-color: #30302f;
     padding: 50px 0 15px 0;
     width: 100%;
 }
 .full{ font-size: 16px; }
 .logo-img {
-    width: 56px;
-    height: 56px;
+    width: 100px;
+    height: 100px;
     border-radius: 60px;
     margin: 0 auto;
+	  margin-left: 50%;
+	transform: scale(2);
+}
+.logo-img-inv {
+	width: 56px;
+	height: 56px;
+	border-radius: 60px;
+	margin: 0 auto;
 }
 .logo-turner {
     font-size: 18px;
@@ -22,7 +30,6 @@
     vertical-align: top;
 }
 .row-picture {
-	visibility: hidden;
     display: inline-block;
     vertical-align: top;
     margin-right: 10px;
@@ -63,19 +70,19 @@ p.info a {
     display: inline-block;
 }
 .icon:hover {
-    color: #db6f1a;
+    color: #ff821f;
     background: #fff;
 }
 .menu {
-	color: #ff821f;
+	color: #30302f;
 }
 .menu ul li {
     list-style: none;
     margin: 5px 0;
-	background: #ff821f;
+	background: #30302f;
 }
 .menu ul li a:hover, .menu ul li a:focus, li.current-menu-item > a{
-    background: #db6f1a;
+    background: #1c1c1b;
 }
 li.current-menu-item:before {
     content: "";
@@ -176,4 +183,77 @@ footer {
 }
 .pager li.active a {
     background: rgba(89, 148, 129, 0.3);
+}
+
+.list-group .list-group-item .row-content .least-content {
+	position: relative;
+}
+
+.avatar-equipo {
+  display: inline-block;
+  margin: 8px;
+}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000px;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+	}
+
+.flip-container, .front, .back {
+	width: 180px;
+	height: 180px;
+}
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.4s;
+  -webkit-transition: 0.4s;
+	transform-style: preserve-3d;
+
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  padding-right:10px;
+	padding-left:10px;
+  background-color: #30302f;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  display: -webkit-flex;
+  justify-content:center;
+	-webkit-justify-content:center;
+	align-items:center;
+	-webkit-align-items:center;
+	flex-wrap:wrap;
+	-webkit-flex-wrap:wrap
 }

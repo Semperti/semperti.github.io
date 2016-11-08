@@ -1,0 +1,27 @@
+image: ruby:2.3
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  artifacts:
+    paths:
+      - public
+  script:
+    - gem install jekyll
+    - bundle install
+    - bundle exec jekyll build -d public
+
+dev:
+  stage: deploy
+  script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+    - ssh-keyscan -H 'web.semperti.local' >> ~/.ssh/known_hosts
+    - apt-get update && apt-get -y install rsync
+    - rsync -avz -e "ssh -i ~/.ssh/id_rsa" 'public/' 'web@web.semperti.local:/var/www/blog'
+  only:
+    - staging

@@ -3,7 +3,7 @@ layout: default
 ---
 <div class="content well">
 <header id="post-header">
-    <h1 id="post-subtitle">Articles by category: <em class="text-muted">{{ page.categories }}</em></h1>
+    <h1 id="post-subtitle">Articulos por categoria: <em class="text-muted">{{ page.categories }}</em></h1>
 </header>
 
 <div id="post-content">
@@ -14,7 +14,7 @@ layout: default
             {% if c_slug == page.categories %}
                 <button class="btn btn-sm btn-primary btn-raised">{{ c_slug }}</button>
             {% else %}
-                <a href="{{ site.url }}/category/{{ c_slug }}" class="btn btn-sm btn-default btn-raised">{{ c_slug }}</a>
+                <a href="{{ site.github.url }}/category/{{ c_slug }}" class="btn btn-sm btn-default btn-raised">{{ c_slug }}</a>
             {% endif %}
         {% endfor %}
     {% endfor %}
@@ -32,7 +32,7 @@ layout: default
             {% if forloop.first %}
                 <div class="least-content">{{ post_year }}</div>
             {% endif %}
-            
+
             {% if forloop.first == false %}
                 {% assign previous_index = forloop.index0 | minus: 1 %}
                 {% capture previous_post_year %}{{ site.categories[page.categories][previous_index].date | date: '%Y' }}{% endcapture %}
@@ -43,14 +43,14 @@ layout: default
             <div class="least-content">{{ post.date | date_to_string }}</div>
             <h4 class="list-group-item-heading"><a href="{{ site.baseurl }}/{{ post.url }}">{{ post.title }}</a></h4>
             <p class="list-group-item-text">{{ post.content | strip_html | truncatewords: 20 }}</p>
-            
+
             </div>
         </div>
         <div class="list-group-separator"></div>
         {% endfor %}
     </div>
     {% else %}
-        <p>There are no posts in this categories.</p>
+        <p>No hay posts en la categoria seleecionada.</p>
     {% endif %}
 </div>
 </div>

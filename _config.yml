@@ -1,18 +1,18 @@
 title: Semperti
-description: Espacio tecnico de semperti
-author: Semperti
-logo: /static/img/avatar.png
-github: https://github.com/ashutosh2k12
-about: Espacio tecnico
+description: Comunidades técnicas de semperti
+author: Blogs
+logo: /static/img/logo-semperti.svg
+github: https://github.com/semperti
+about: Comunidades técnicas
 
 baseurl: ""
-url: "http://aboutashu.com/hcz-jekyll-blog"
+url: "http://semperti.github.io"
 
-disqus_shortname: aboutashu
-google_analytics: UA-72862926-1
+disqus_shortname: blog-comunidades-tecnicas
+google_analytics:
 
 share:
-  twitter_username: \#
+  twitter_username: \@_semperti
   fb_appid: 000000000000
 
 
