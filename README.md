@@ -1,93 +1,66 @@
-## Semperti blog
+# Blog Técnico de Semperti
 
-#### Categorias
+## Instrucciones para aportar con post técnicos
 
-* Editar las categorias en la carpeta "category" para poder asi incluir esas categorias en el tag "categories:" de cada post. Esto permite filtrar los posts por categoria en el archivo.
-Por ejemplo:
+Para poder sumar post técnicos en la comunidad de Semperti lo primero que debe suceder es ser invitado a formar parte de la organización de GitHub de Semperti en calidad de escritor.
 
-Quiero crear una categoria "Programacion", entonces en la carpeta creo un archivo "programacion.md".
-El archivo debe seguir el siguiente layout:
+Para esto se deberá enviar el usuario de GitHub a blog@semperti.com.
 
-```
----
-layout: posts_by_category
-categories: programacion  <-- Este seria el tag a incluir en los posts
-title: Programacion       <-- Este seria el titulo de la categoria que va a figurar en el archivo
-permalink: /category/programacion/  <-- /category/NOMBRE_DE_ARRIBA/ (es importante la barra al final)
----
-```
+Cuando esto suceda se recibirá una notificación via mail la cual deberá ser aceptada.
 
-Una vez creado el archivo, solo debe usar el tag "categories: programacion" en cualquier post y automaticamente van a poder ser filtrados por esta categoria.
+Una vez dentro de la organización se deberá seleccionar el repositorio Semperti/semperti.github.io e ir al directorio \_posts como indica la imagen:
 
-#### Redes sociales
+![Main Page Repo Blog](.images/main.png)
 
-* Para editar los links a las redes sociales hay que agregar los links en el archivo "social.json" dentro de la carpeta "_data". Por ejemplo:
+Una vez dentro del directorio de \_posts se deberá crear el archivo que representará la entrada en el Blog mediante el boton de "Crear Nuevo Archivo".
 
-Asumiendo que el link a la pagina de facebook es
-```
-http://www.facebook.com/semperti
-```
-en el archivo "social.json" cambiaria:
-```
-  {
-    "icon": "fa-facebook",
-    "link": ""
-  }
-```
-por
-```
-  {
-    "icon": "fa-facebook",
-    "link": "http://www.facebook.com/semperti"
-  }
-```
-y el icono de facebook automaticamente va a llevar a la pagina ahora.
-Para modificar el icono, busco el nombre en la pagina http://fontawesome.io/icons/ dentro de la seccion "Brand Icons", ahi voy a encontrar los iconos de Facebook, Twitter, etc.
+El nombre del archivo deberá tener el formato AAAA-MM-DD-nombre-del-post.md y seguirá la convención de escritura de Jekyll en formato Markdown.
 
-#### Sección Equipo
+![Crear Entrada Blog](.images/crear_archivo.png)
 
-* Para modificar la sección de equipo es necesario acceder al archivo "equipo.json" ubicada en la carpeta "_data". Una vez abierto el archivo vamos a encontrarnos por una lista de integrantes encerrados entre corchetes( [] ), teniendo en cada miembro una llave que abre( { ) y una llave que cierra ( } ). Los avatars deben estar con extensión PNG en la carpeta "/static/img/avatars/".
-* Para modificar algún miembro existente solo debo modificar la propiedad que quiera y guardar. Por ejemplo, si quiero cambiar el avatar de Nicolas Cisco por un archivo que se llama "av-cisco2.png" cambiaría:
+Una vez dentro del editor, simplemente completamos el nombre del archivo del post y su contenido.
 
-```
-"avatar": "av-cisco",
-```
-por
-```
-"avatar": "av-cisco2",
-```
+![Creando Entrada Blog](.images/creando_archivo.png)
 
-Si quiero agregar un nuevo miembro, debo al final del archivo, ANTES del corchete que cierra el archivo y despues de la última llave, agregar una coma y agregar la informacion correspondiente. Quedaría asi, incluyendo la última línea del miembro anterior y el corchete que indica el final de la lista en el archivo:
+Cuando finalizamos el post, vamos hacia la parte de abajo de la página del editor y realizamos el *commit* del mismo, agregando un título y comentario acorde.
 
-```
-}, <--- Esta es la coma que debo agregar
-{
-  "nombre": "NOMBRE APELLIDO",
-  "avatar": "NOMBRE-IMAGEN-AVATAR-SIN-EXTENSION",
-  "cargo": "CARGO",
-  "links": [
-              {
-                "icon": "fa-facebook",
-                "link": "LINK A FACEBOOK"
-              },
-              {
-                "icon": "fa-linkedin",
-                "link": "LINK A LINKEDIN"
-              } <-- agregando una coma acá y copiando como esta entre llaves arriba puedo agregar links a otra red social/página web
-          ]
-}
-]
-```
+Como se puede ver en la imagen a continuación, el post no se sube directamente al *maste* ya que el mismo representa el blog en producción, sino que se crea un entorno de *staging*, en este caso una *branch* aparte.
 
-Para la parte de links a red sociales/páginas web esta indicado donde se puede agregar una estructura como la que se mostrará a continuación para un nuevo link a la misma. Si se borra alguna de las existentes, se borra ese botón y su correspondiente link de la tarjeta del miembro. Para saber con que completar el campo "icon" puedo buscar el ícono a mostrar para ese botón en la siguiente página: http://fontawesome.io/icons/ . La estructura para un link/botón es:
+Esto a su vez genera un *pull request*, esto es un mecanismo por el cual se notifica al grupo de editores que alguien solicitó subir un post y entra en proceso de revisión.
 
-```
-{
-  "icon": "NOMBRE DE ICONO SACADO DE LA WEB",
-  "link": "LINK CORRESPONDIENTE"
-}
-```
+A continuación puede verse la interfaz del *pull request*.
 
-#### Formulario de contacto
+![Pull Request](.images/creando_pull_request.png)
 
-* Para que el formulario de contacto funcione correctamente es necesario configurar el campo 'url:' en el archivo 'main.js' que se encuentra en la carpeta 'js' y ademas hay que dar permiso para el CORS en el archivo php 'blog_mailer.php' que se va a encontrar en la carpeta 'mailing' de la web de semperti.
+En este momento podría suceder que el editor estuviera de acuerdo con todo el post y lo uniera al *master*.
+
+En caso contrario el editor solicitará cambios los cuales se notificarán via mail en la casilla configurada en la cuenta de GitHub.
+
+Ahi habrá un link para ver la revisión realizada por el editor. 
+
+Este link nos lleva a la siguiente interfaz:
+
+![Code Review](.images/ver_review.png)
+
+Haciendo click en "Ver Review" se verán los cambios indicados por el editor.
+
+![Viendo Review](.images/viendo_review.png)
+
+Para realizar los cambios deberá seleccionarse el archivo del post, realizar los cambios y volver a realizar el *commit*, así:
+
+![Cambios](.images/haciendo_cambios.png)
+
+Este proceso podrá repetirse hasta que esten todos los cambios aceptados y el post se incluya en el *master*.
+
+### Alternativas
+
+Si bien este instructivo apunta a utilizar la interfaz propuesta por GitHub, al ser un repositorio más, puede utilizarse el cliente git que sea de preferencia.
+
+### Info Adicional
+
+[Guia Markdown](https://guides.github.com/features/mastering-markdown/)
+
+[Guia Jekyll](https://jekyllrb.com/docs/posts/)
+
+[Guia Git](https://git-scm.com/book/en/v2/Getting-Started-Git-Basics)
+
