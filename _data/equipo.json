@@ -21,58 +21,34 @@
   {
     "nombre": "Pablo Halamaj",
     "avatar": "av-halamaj",
-    "cargo": "Desarrollador",
+    "cargo": "Hard. Soft. Café.",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
+
                 {
                   "icon": "fa-twitter",
-                  "link": ""
+                  "link": "https://twitter.com/pablohalamaj"
                 },
-                {
-                  "icon": "fa-linkedin",
-                  "link": ""
-                }
+
             ]
   },
   {
     "nombre": "Rodrigo Burdet",
     "avatar": "av-burdet",
-    "cargo": "Desarrollador",
+    "cargo": "Entusiasta y creativo",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
+
                 {
                   "icon": "fa-twitter",
-                  "link": ""
+                  "link": "https://twitter.com/RodrigoBurdet"
                 },
-                {
-                  "icon": "fa-linkedin",
-                  "link": ""
-                }
+
             ]
   },
   {
     "nombre": "Federico Colangelo",
     "avatar": "av-colangelo",
-    "cargo": "Desarrollador",
+    "cargo": "Arquitecto. Me encanta cocinar",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-twitter",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-linkedin",
-                  "link": ""
-                }
             ]
   },
   {
@@ -89,19 +65,12 @@
   {
     "nombre": "Nahuel Persia",
     "avatar": "av-persia",
-    "cargo": "Desarrollador",
+    "cargo": "Aquitectura de integración",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-twitter",
-                  "link": ""
-                },
+ 
                 {
                   "icon": "fa-linkedin",
-                  "link": ""
+                  "link": "https://ar.linkedin.com/in/npersia"
                 }
             ]
   },
@@ -127,15 +96,15 @@
   {
     "nombre": "Eduardo Speciali",
     "avatar": "av-speciali",
-    "cargo": "Desarrollador",
+    "cargo": "Experiencia en Consultoría",
     "links": [
                 {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
+                  "icon": "fa-twitter",
+                  "link": "https://twitter.com/eduardospecial1"
+                },               
                 {
                   "icon": "fa-linkedin",
-                  "link": ""
+                  "link": "https://ar.linkedin.com/in/eduardo-speciali-aa26b87"
                 }
             ]
   }
