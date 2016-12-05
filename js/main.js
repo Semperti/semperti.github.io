@@ -3,9 +3,9 @@
         e.preventDefault();
         var form = this;
 		var dataEnviar = $(form).serialize();
-		
+
         $.ajax({
-            url: "//web.semperti.local/mailing/blog_mailer.php",
+            url: "//www.semperti.com/mailing/blog_mailer.php",
             success: function(){
                 Array.prototype.forEach.call(form.querySelectorAll("input:not([type=hidden]),textarea"), function(ele){
                     ele.value = "";
