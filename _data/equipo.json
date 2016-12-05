@@ -2,20 +2,9 @@
   {
     "nombre": "Nicol&aacute;s Cisco",
     "avatar": "av-cisco",
-    "cargo": "Desarrollador",
+    "cargo": "Desarrollador.",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-twitter",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-linkedin",
-                  "link": ""
-                }
+
             ]
   },
   {
@@ -34,7 +23,7 @@
   {
     "nombre": "Rodrigo Burdet",
     "avatar": "av-burdet",
-    "cargo": "Entusiasta y creativo",
+    "cargo": "Entusiasta y creativo.",
     "links": [
 
                 {
@@ -47,25 +36,22 @@
   {
     "nombre": "Federico Colangelo",
     "avatar": "av-colangelo",
-    "cargo": "Arquitecto. Me encanta cocinar.",
+    "cargo": "Arquitecto. Me gusta cocinar.",
     "links": [
             ]
   },
   {
     "nombre": "David Pasqua",
     "avatar": "av-pasqua",
-    "cargo": "Desarrollador",
+    "cargo": "Desarrollador.",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                }
+
             ]
   },
   {
     "nombre": "Nahuel Persia",
     "avatar": "av-persia",
-    "cargo": "Aquitectura de integración",
+    "cargo": "Aquitectura de integración.",
     "links": [
  
                 {
@@ -79,24 +65,13 @@
     "avatar": "av-petronczak",
     "cargo": "Desarrollador",
     "links": [
-                {
-                  "icon": "fa-facebook",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-twitter",
-                  "link": ""
-                },
-                {
-                  "icon": "fa-linkedin",
-                  "link": ""
-                }
+
             ]
   },
   {
     "nombre": "Eduardo Speciali",
     "avatar": "av-speciali",
-    "cargo": "Experiencia en Consultoría",
+    "cargo": "Experiencia en Consultoría.",
     "links": [
                 {
                   "icon": "fa-twitter",
