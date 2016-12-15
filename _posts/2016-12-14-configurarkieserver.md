@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Como configurar el kie server y usar BRMS como un servicio de reglas
+title: Como configurar el KIE server y usar BRMS como un servicio de reglas
 
 date: 2016-12-14 13:06
 
