@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Como configurar el kie server y usar BRMS como un servicio de reglas.
+title: Como configurar el kie server y usar BRMS como un servicio de reglas
 
 date: 2016-12-14 13:06
 
@@ -12,30 +12,45 @@ categories: kieserver BRMS reglas rest
 
 ---
 
-#Como configurar el kie server y usar BRMS como un servicio de reglas.
+#Pequeña introducción a Red Hat JBoss BRMS
 
-Cuando queremos aprender sobre las herramientas de la familia de automatización de Red Hat, en general empezamos con el curso de Open.
-Este engloba en forma muy general BPMS y BRMS, con lo cual, se nos empieza a generar una nebulosa de donde termina uno y empieza el otro.
+En la mayoría de las empresas, la lógica de negocio se encuentra dispersa en lugares como: el código de las aplicaciones, hojas de cálculo, en las mentes de los empleados, manuales de descripción de tareas, etc. Esto provoca que consultar, comprender y aplicar correctamente las reglas de la empresa, resulte complejo.
+Ante este escenario surge Red Hat JBoss BRMS, una solución de código libre que permite concentrar todas las reglas de negocio en un único punto para que pueda ser consultado desde cualquier parte de la organización.
+El crear las reglas de negocio en este motor de reglas, no sólo indica como modelar las diferentes lógicas de negocio, sinó que además la ejecuta.
+
+Red Hat JBoss BRMS como producto, puede ser instalado solo, sin mas, pero también viene incluido dentro de Red Hat JBoss BPMS.
+
+Red Hat JBoss BPMS nos permitirá modelar la lógica de negocio como una serie de tareas relacionadas que se deben ejecutar, dependiendo de diferentes condiciones a evaluar. Las tareas podrían ejecutarse en forma secuencial, paralela o quedar a la espera de eventos. También permitirá que definamos los tipos de tareas, las que pueden ser manuales, scripts, comunicaciones con servicios web, o ejecutar reglas de BRMS.
+
 
 ##Requisitos para seguir este post
-* Tener instalado JBoss BRMS 6.x sobre JBoss EAP 6.x o 7.x.
-* Tener conocimientos básicos de JBoss EAP.
-* Asegurar que se encuentran deployados en JBoss EAP los siguientes paquetes: business-central.war, kie-server.war.
-* Tener mínimos conocimientos sobre autoría de reglas de negocio sobre JBoss BRMS 6.x.
+- Tener instalado JBoss BRMS 6.x sobre JBoss EAP 6.x o 7.x.
+  - Para instalar Red Hat JBoss BRMS pueden ver: https://developers.redhat.com/products/brms/get-started/
+  - Para instalar Red Hat JBoss EAP pueden ver: https://developers.redhat.com/products/eap/get-started/
+- Tener conocimientos básicos de JBoss EAP.
+- Asegurar que se encuentran deployados en JBoss EAP los siguientes paquetes: business-central.war, kie-server.war.
+- Tener mínimos conocimientos sobre autoría de reglas de negocio sobre JBoss BRMS 6.x.
 
 La motivación de este post no es enseñar a escribir reglas, ni a usar BRMS, eso lo aprendimos anteriormente. Lo que pretendemos es poder usar las reglas que creamos desde alguna pieza de software externo al motor de reglas, en resumen: **Armar un servicio de reglas**.
 
-Para lograr esto, lo que vamos a hacer es configurar el kie server de BRMS, quien es el encargado de gestionar las comunicaciones entre el motor de reglas y el exterior.
+Para lograr esto, lo que vamos a hacer es configurar el KIE Server de BRMS, quien es el encargado de gestionar las comunicaciones entre el motor de reglas y el exterior.
 
 Lo primero que hay que tener en cuenta para poder armar un servicio de reglas es la configuración de BRMS, ya que, aunque la instalación incluye todas las herramientas necesarias, tendremos que configurarlas.
 
 
-##Configuración de standalone.xml
-Este el el primer archivo a configurar, para localizarlo vamos a la ruta:
-**$JBOSS_EAP_HOME/standalone/configuration/standalone.xml**, donde
-**$JBOSS_EAP_HOME** es la ubicación de carpeta raíz de nuestro JBoss EAP.
+##Agregar usuario del kie server
+Una vez que tenemos el archivo standalone.xml configurado, vamos a crear el usuario para controlar el kie server, el cual tendrá que coincidir con el definido en standalone.xml.
 
-Una vez que lo encontramos, vamos a agregar la propiedades necesarias para que el kie server empiece a funcionar.
+Para crearlo vamos a ejecutar la aplicación **$JBOSS_EAP_HOME/bin/add-user.sh** (**$JBOSS_EAP_HOME** es la ubicación de carpeta raíz de nuestro JBoss EAP) con la siguiente información:
+* **Usuario:** kieserver
+* **Clave:** kieserver1!
+* **Rol:** kie-server
+
+
+##Configuración de standalone.xml
+Para localizarlo vamos a la ruta: **$JBOSS_EAP_HOME/standalone/configuration/standalone.xml**.
+
+Una vez que lo encontramos, vamos a agregar la propiedades necesarias para que el KIE Server empiece a funcionar.
 
 Buscamos las siguientes lineas:
 ```xml
@@ -65,22 +80,15 @@ Y lo vamos a reemplazar por las siguientes:
 
 
 Cada una de las propiedades agregadas tiene la siguiente funcionalidad:
-org.kie.server.user usuario para conectarnos con el kieserver desde el controlador
-org.kie.server.pwd  contraseña para conectarnos con el kie server desde el controlador
-org.kie.server.location URL de la instancia del kie server
-org.kie.server.controller   lista de URL’s para el endpoint del controlador
-org.kie.server.controller.user  usuario que usamos para conectarnos al controlador de la api REST
-org.kie.server.controller.pwd   la contraseña del usuario que usamos para conectarnos al controlar de la api REST
-org.kie.server.id   ID con el que llamamos al kie server
+* **org.kie.server.user:** usuario para conectarnos con el KIE Server desde el controlador
+* **org.kie.server.pwd:** contraseña para conectarnos con el KIE Server desde el controlador
+* **org.kie.server.location:** URL de la instancia del KIE Server
+* **org.kie.server.controller:** lista de URL’s para el endpoint del controlador
+* **org.kie.server.controller.user:** usuario que usamos para conectarnos al controlador de la api REST
+* **org.kie.server.controller.pwd:** la contraseña del usuario que usamos para conectarnos al controlar de la api REST
+* **org.kie.server.id:** ID con el que llamamos al KIE Server
 
-##Agregar usuario del kie server
-Una vez que tenemos el archivo standalone.xml configurado, vamos a crear el usuario para controlar el kie server, el cual tendrá que coincidir con el definido en standalone.xml.
-
-Para crearlo vamos a ejecutar la aplicación **$JBOSS_EAP_HOME/bin/add-user.sh** con la siguiente información:
-* **Usuario:** kieserver
-* **Clave:** kieserver1!
-* **Rol:** kie-server
-
+**NOTA:** ver que usamos el usuario y clave para el KIE Server que habíamos configurado anteriormente.
 
 ##Crear nuestro proyecto
 A partir de este punto vamos a necesitar tener nuestro proyecto disponible, para eso podemos clonar el siguiente proyecto, en cual me voy a basar para mostrar los ejemplos:
@@ -89,12 +97,12 @@ https://github.com/npersia/brms-demo.git
 Una vez tengamos el proyecto listo, necesitaremos compilarlo y deployarlo, y recordar el número de versión que le asignamos.
 
 ##Crear el container
-Ahora vamos a poder crear el container del kie server.
+Ahora vamos a poder crear el container del KIE Server.
 Estos son entornos autónomos que han sido provisionados para contener instancias de los paquetes que conforman nuestro proyecto.
 
-Para crearlo vamos a **Deploy -> Rule Deployment** dentro del *business-central*, y ahí veremos que el kie server **“local-server-123”** está creado.
+Para crearlo vamos a **Deploy -> Rule Deployment** dentro del *business-central*, y ahí veremos que el KIE Server **“local-server-123”** está creado.
 
-Teniéndolo seleccionado, hacemos click en **Add Container** y elegimos el paquete que deployamos y queremos exponer a través del kie server.
+Teniéndolo seleccionado, hacemos click en **Add Container** y elegimos el paquete que deployamos y queremos exponer a través del KIE Server.
 
 *Elegir el paquete como primer paso, aunque este en la parte más baja del menú nos facilita la carga de los datos de configuración, autocompletando con la información correcta todos los campos, excepto el nombre del container.*
 
@@ -127,7 +135,7 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 **Metodo:** Post
 
 **Headers:**
-* Authorization: Basic a2llc2VydmVyOmtpZXNlcnZlcjEh (“usuario del kie server:clave” en base 64: kieserver:kieserver1!)
+* Authorization: Basic a2llc2VydmVyOmtpZXNlcnZlcjEh (a2llc2VydmVyOmtpZXNlcnZlcjEh significa en Base 64: "kieserver:kieserver1!", si usamos una combinación de usuario y clave diferente tendremos que codificarla usando el formato "usuario del KIE Server:clave")
 * Content-Type: application/xml
 * X-KIE-ContentType: xstream
 * Accept: application/xml
