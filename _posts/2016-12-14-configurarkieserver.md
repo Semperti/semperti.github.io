@@ -12,11 +12,11 @@ categories: kieserver BRMS reglas rest
 
 ---
 
-#Como configurar el kie server y usar BRMS como un servicio de reglas
+#Como configurar el KIE server y usar BRMS como un servicio de reglas
 
 En la mayoría de las empresas, la lógica de negocio se encuentra dispersa en lugares como: el código de las aplicaciones, hojas de cálculo, en las mentes de los empleados, manuales de descripción de tareas, etc. Esto provoca que consultar, comprender y aplicar correctamente las reglas de la empresa, resulte complejo.
 Ante este escenario surge Red Hat JBoss BRMS, una solución de código libre que permite concentrar todas las reglas de negocio en un único punto para que pueda ser consultado desde cualquier parte de la organización.
-El crear las reglas de negocio en este motor de reglas, no sólo indica como modelar las diferentes lógicas de negocio, sinó que además la ejecuta.
+El crear las reglas de negocio en este motor de reglas, no sólo indica como modelar las diferentes lógicas de negocio, sino que además la ejecuta.
 
 Red Hat JBoss BRMS como producto, puede ser instalado solo, sin mas, pero también viene incluido dentro de Red Hat JBoss BPMS.
 
@@ -38,13 +38,14 @@ Para lograr esto, lo que vamos a hacer es configurar el KIE Server de BRMS, quie
 Lo primero que hay que tener en cuenta para poder armar un servicio de reglas es la configuración de BRMS, ya que, aunque la instalación incluye todas las herramientas necesarias, tendremos que configurarlas.
 
 
-##Agregar usuario del kie server
+##Agregar usuario del KIE server
 Una vez que tenemos el archivo standalone.xml configurado, vamos a crear el usuario para controlar el kie server, el cual tendrá que coincidir con el definido en standalone.xml.
 
 Para crearlo vamos a ejecutar la aplicación **$JBOSS_EAP_HOME/bin/add-user.sh** (**$JBOSS_EAP_HOME** es la ubicación de carpeta raíz de nuestro JBoss EAP) con la siguiente información:
-* **Usuario:** kieserver
-* **Clave:** kieserver1!
-* **Rol:** kie-server
+
+- **Usuario:** kieserver
+- **Clave:** kieserver1!
+- **Rol:** kie-server
 
 
 ##Configuración de standalone.xml
@@ -53,17 +54,18 @@ Para localizarlo vamos a la ruta: **$JBOSS_EAP_HOME/standalone/configuration/sta
 Una vez que lo encontramos, vamos a agregar la propiedades necesarias para que el KIE Server empiece a funcionar.
 
 Buscamos las siguientes lineas:
-```xml
+
+{% highlight xml %}
 <system-properties>
     <property name="org.kie.server.repo" value="${jboss.server.data.dir}"/>
     <property name="org.kie.example" value="true"/>
     <property name="org.jbpm.designer.perspective" value="ruleflow"/>
 </system-properties>
-```
+{% endhighlight %}
 
 Y lo vamos a reemplazar por las siguientes:
 
-```xml
+{% highlight xml %}
 <system-properties>
     <property name="org.kie.server.repo" value="${jboss.server.data.dir}"/>
     <property name="org.kie.example" value="true"/>
@@ -76,10 +78,11 @@ Y lo vamos a reemplazar por las siguientes:
     <property name="org.kie.server.controller.pwd" value="kieserver1!"></property>
     <property name="org.kie.server.id" value="local-server-123"></property>
 </system-properties>
-```
+{% endhighlight %}
 
 
 Cada una de las propiedades agregadas tiene la siguiente funcionalidad:
+
 * **org.kie.server.user:** usuario para conectarnos con el KIE Server desde el controlador
 * **org.kie.server.pwd:** contraseña para conectarnos con el KIE Server desde el controlador
 * **org.kie.server.location:** URL de la instancia del KIE Server
@@ -96,7 +99,7 @@ https://github.com/npersia/brms-demo.git
 
 Una vez tengamos el proyecto listo, necesitaremos compilarlo y deployarlo, y recordar el número de versión que le asignamos.
 
-![Build & Deploy]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen001.png)
+![Build & Deploy](/assets/2016-12-14-configurarkieserver/imagen001.png)
 
 
 ##Crear el container
@@ -105,39 +108,40 @@ Estos son entornos autónomos que han sido provisionados para contener instancia
 
 Para crearlo vamos a **Deploy -> Rule Deployment** dentro del *business-central*, y ahí veremos que el KIE Server **“local-server-123”** está creado.
 
-![Rule deployment]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen002.png)
-![Primera vista del KIE Server]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen003.png)
+![Rule deployment](/assets/2016-12-14-configurarkieserver/imagen002.png)
+![Primera vista del KIE Server](/assets/2016-12-14-configurarkieserver/imagen003.png)
 
 
 Teniéndolo seleccionado, hacemos click en **Add Container** y elegimos el paquete que deployamos y queremos exponer a través del KIE Server.
 
-![Container: elegir paquete]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen004.png)
+![Container: elegir paquete](/assets/2016-12-14-configurarkieserver/imagen004.png)
 
 
 *Elegir el paquete como primer paso, aunque este en la parte más baja del menú nos facilita la carga de los datos de configuración, autocompletando con la información correcta todos los campos, excepto el nombre del container.*
 
-![Container: Autocompleta información]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen005.png)
+![Container: Autocompleta información](/assets/2016-12-14-configurarkieserver/imagen005.png)
 
 
 Ahora vamos a ponerle un nombre, en mi caso ConteinerTest  y hacemos click a Finish.
 
-![Container: nombrandolo]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen006.png)
+![Container: nombrandolo](/assets/2016-12-14-configurarkieserver/imagen006.png)
 
-![Container: Finalizando creación]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen007.png)
+![Container: Finalizando creación](/assets/2016-12-14-configurarkieserver/imagen007.png)
 
 
 En este momento tenemos nuestro container creado, pero no está funcionando.
 
 En las dos primeras solapas, vamos a observar que :
+
 - *Status* da el mensaje **No Remote Servers**
 
-![Vista de Status]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen008.png)
+![Vista de Status](/assets/2016-12-14-configurarkieserver/imagen008.png)
 
 - *Version Configuration* tiene dos campos a completar:
   - **Scanner**, que resolvería desplegar en el container el último paquete deployado (no vamos a usarlo)
   - **Version** que tiene la versión del paquete que deployamos en el container.
   
-![Vista de Version Configuration]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen009.png)
+![Vista de Version Configuration](/assets/2016-12-14-configurarkieserver/imagen009.png)
 
 
 *Cada vez que hagamos modificaciones en el proyecto, y esto implique crear una nueva versión del proyecto, vamos a tener que venir al conteiner y actualizar el número de versión al cual esta apuntando. De no hacerlo, como en BRMS todas las versiones quedan guardadas, a menos que intencionalmente las borremos, seguirá dando la funcionalidad anterior.*
@@ -146,11 +150,11 @@ Una vez que está todo listo y la versión es la correcta, podemos hacer click e
 
 Ahora en la solapa *Status*, veremos que el container **local-server-123@0.0.0.0:8080** tiene un tilde verde, lo que indica que se levanto correctamente.
 
-![Servidor corriendo]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen011.png)
+![Servidor corriendo](/assets/2016-12-14-configurarkieserver/imagen011.png)
 
 Haciendo click en el link que muestra el containter podremos ver mas información.
 
-![Respuesta del servidor corriendo]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen010.png)
+![Respuesta del servidor corriendo](/assets/2016-12-14-configurarkieserver/imagen010.png)
 
 
 En este momento estamos listos para empezar a consumir la información de nuestro motor de reglas desde un medio externo.
@@ -166,15 +170,17 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 **Metodo:** Post
 
 **Headers:**
+
 * Authorization: Basic a2llc2VydmVyOmtpZXNlcnZlcjEh (a2llc2VydmVyOmtpZXNlcnZlcjEh significa en Base 64: "kieserver:kieserver1!", si usamos una combinación de usuario y clave diferente tendremos que codificarla usando el formato "usuario del KIE Server:clave")
 * Content-Type: application/xml
 * X-KIE-ContentType: xstream
 * Accept: application/xml
 
-![Postman configuracion]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen012.png)
+![Postman configuracion](/assets/2016-12-14-configurarkieserver/imagen012.png)
 
 * Body:
-```xml
+
+{% highlight xml %}
 <batch-execution lookup="ksesion1">
 
     <insert-elements return-object="true">
@@ -202,13 +208,14 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 
 
 </batch-execution>
-```
-![Postman body]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen013.png)
+{% endhighlight %}
+
+![Postman body](/assets/2016-12-14-configurarkieserver/imagen013.png)
 
 **Lo cual nos va a responder**
 
 
-```xml
+{% highlight xml %}
 <org.kie.server.api.model.ServiceResponse>
     <type>SUCCESS</type>
     <msg>Container ConteinerTest successfully called.</msg>
@@ -257,9 +264,7 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
         </result>
     </result>
 </org.kie.server.api.model.ServiceResponse>
-```
-
-
+{% endhighlight %}
 
 ##Conclusión
 
@@ -278,5 +283,3 @@ Cualquier duda o comentario me lo pueden dejar acá o me mandan un mail a nahuel
 Saludos,
 
 Nahuel Persia
-
-                                     
