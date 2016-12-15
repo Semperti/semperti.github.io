@@ -2,7 +2,7 @@
 
 layout: post
 
-title: Como configurar el KIE server y usar BRMS como un servicio de reglas
+title: Como configurar el KIE Server y usar BRMS como un servicio de reglas
 
 date: 2016-12-14 13:06
 
@@ -273,7 +273,7 @@ Con estas simples configuraciones, el motor de reglas va a estar funcionando com
 Ahora sólo resta aplicar los conocimientos de BRMS y la imaginación de cada uno para sacar el mayor provecho a la herramienta.
 
 
-Espero esta informa sea de utilidad.
+Espero esta información sea de utilidad.
 
 Cualquier duda o comentario me lo pueden dejar acá o me mandan un mail a nahuel.persia@semperti.com
 
