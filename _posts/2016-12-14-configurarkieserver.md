@@ -12,7 +12,7 @@ categories: kieserver BRMS reglas rest
 
 ---
 
-#Como configurar el KIE server y usar BRMS como un servicio de reglas
+# Como configurar el KIE server y usar BRMS como un servicio de reglas
 
 En la mayoría de las empresas, la lógica de negocio se encuentra dispersa en lugares como: el código de las aplicaciones, hojas de cálculo, en las mentes de los empleados, manuales de descripción de tareas, etc. Esto provoca que consultar, comprender y aplicar correctamente las reglas de la empresa, resulte complejo.
 Ante este escenario surge Red Hat JBoss BRMS, una solución de código libre que permite concentrar todas las reglas de negocio en un único punto para que pueda ser consultado desde cualquier parte de la organización.
@@ -23,7 +23,7 @@ Red Hat JBoss BRMS como producto, puede ser instalado solo, sin mas, pero tambi�
 Red Hat JBoss BPMS nos permitirá modelar la lógica de negocio como una serie de tareas relacionadas que se deben ejecutar, dependiendo de diferentes condiciones a evaluar. Las tareas podrían ejecutarse en forma secuencial, paralela o quedar a la espera de eventos. También permitirá que definamos los tipos de tareas, las que pueden ser manuales, scripts, comunicaciones con servicios web, o ejecutar reglas de BRMS.
 
 
-##Requisitos para seguir este post
+## Requisitos para seguir este post
 - Tener instalado JBoss BRMS 6.x sobre JBoss EAP 6.x o 7.x.
   - Para instalar Red Hat JBoss BRMS pueden ver: https://developers.redhat.com/products/brms/get-started/
   - Para instalar Red Hat JBoss EAP pueden ver: https://developers.redhat.com/products/eap/get-started/
@@ -38,7 +38,7 @@ Para lograr esto, lo que vamos a hacer es configurar el KIE Server de BRMS, quie
 Lo primero que hay que tener en cuenta para poder armar un servicio de reglas es la configuración de BRMS, ya que, aunque la instalación incluye todas las herramientas necesarias, tendremos que configurarlas.
 
 
-##Agregar usuario del KIE server
+## Agregar usuario del KIE server
 Una vez que tenemos el archivo standalone.xml configurado, vamos a crear el usuario para controlar el kie server, el cual tendrá que coincidir con el definido en standalone.xml.
 
 Para crearlo vamos a ejecutar la aplicación **$JBOSS_EAP_HOME/bin/add-user.sh** (**$JBOSS_EAP_HOME** es la ubicación de carpeta raíz de nuestro JBoss EAP) con la siguiente información:
@@ -48,7 +48,7 @@ Para crearlo vamos a ejecutar la aplicación **$JBOSS_EAP_HOME/bin/add-user.sh**
 - **Rol:** kie-server
 
 
-##Configuración de standalone.xml
+## Configuración de standalone.xml
 Para localizarlo vamos a la ruta: **$JBOSS_EAP_HOME/standalone/configuration/standalone.xml**.
 
 Una vez que lo encontramos, vamos a agregar la propiedades necesarias para que el KIE Server empiece a funcionar.
@@ -93,7 +93,7 @@ Cada una de las propiedades agregadas tiene la siguiente funcionalidad:
 
 **NOTA:** ver que usamos el usuario y clave para el KIE Server que habíamos configurado anteriormente.
 
-##Crear nuestro proyecto
+## Crear nuestro proyecto
 A partir de este punto vamos a necesitar tener nuestro proyecto disponible, para eso podemos clonar el siguiente proyecto, en cual me voy a basar para mostrar los ejemplos:
 https://github.com/npersia/brms-demo.git
 
@@ -102,7 +102,7 @@ Una vez tengamos el proyecto listo, necesitaremos compilarlo y deployarlo, y rec
 ![Build & Deploy](/assets/2016-12-14-configurarkieserver/imagen001.png)
 
 
-##Crear el container
+## Crear el container
 Ahora vamos a poder crear el container del KIE Server.
 Estos son entornos autónomos que han sido provisionados para contener instancias de los paquetes que conforman nuestro proyecto.
 
@@ -162,7 +162,7 @@ En este momento estamos listos para empezar a consumir la información de nuestr
 Para hacer esto, yo voy a usar Postman, una extensión de Google Chrome para enviar mensajes.
 
 
-##Configuración de Postman
+## Configuración de Postman
 Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 
 **URL:** http://0.0.0.0:8080/kie-server/services/rest/server/containers/instances/ConteinerTest (como en org.kie.server.location)
@@ -266,7 +266,7 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 </org.kie.server.api.model.ServiceResponse>
 {% endhighlight %}
 
-##Conclusión
+## Conclusión
 
 Con estas simples configuraciones, el motor de reglas va a estar funcionando como un servicio, y podremos implementar módulos de REST api en nuestras aplicaciones para consultarlo.
 
