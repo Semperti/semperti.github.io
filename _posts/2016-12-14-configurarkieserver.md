@@ -16,7 +16,7 @@ categories: kieserver BRMS reglas rest
 
 En la mayoría de las empresas, la lógica de negocio se encuentra dispersa en lugares como: el código de las aplicaciones, hojas de cálculo, en las mentes de los empleados, manuales de descripción de tareas, etc. Esto provoca que consultar, comprender y aplicar correctamente las reglas de la empresa, resulte complejo.
 Ante este escenario surge Red Hat JBoss BRMS, una solución de código libre que permite concentrar todas las reglas de negocio en un único punto para que pueda ser consultado desde cualquier parte de la organización.
-El crear las reglas de negocio en este motor de reglas, no sólo indica como modelar las diferentes lógicas de negocio, sinó que además la ejecuta.
+El crear las reglas de negocio en este motor de reglas, no sólo indica como modelar las diferentes lógicas de negocio, sino que además la ejecuta.
 
 Red Hat JBoss BRMS como producto, puede ser instalado solo, sin mas, pero también viene incluido dentro de Red Hat JBoss BPMS.
 
