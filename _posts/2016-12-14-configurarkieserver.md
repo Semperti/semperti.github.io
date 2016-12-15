@@ -96,23 +96,49 @@ https://github.com/npersia/brms-demo.git
 
 Una vez tengamos el proyecto listo, necesitaremos compilarlo y deployarlo, y recordar el número de versión que le asignamos.
 
+![Build & Deploy]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen001.png)
+
+
 ##Crear el container
 Ahora vamos a poder crear el container del KIE Server.
 Estos son entornos autónomos que han sido provisionados para contener instancias de los paquetes que conforman nuestro proyecto.
 
 Para crearlo vamos a **Deploy -> Rule Deployment** dentro del *business-central*, y ahí veremos que el KIE Server **“local-server-123”** está creado.
 
+![Rule deployment]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen002.png)
+![Primera vista del KIE Server]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen003.png)
+
+
 Teniéndolo seleccionado, hacemos click en **Add Container** y elegimos el paquete que deployamos y queremos exponer a través del KIE Server.
+
+![Container: elegir paquete]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen004.png)
+
 
 *Elegir el paquete como primer paso, aunque este en la parte más baja del menú nos facilita la carga de los datos de configuración, autocompletando con la información correcta todos los campos, excepto el nombre del container.*
 
+![Container: Autocompleta información]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen005.png)
+
+
 Ahora vamos a ponerle un nombre, en mi caso ConteinerTest  y hacemos click a Finish.
+
+![Container: nombrandolo]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen006.png)
+
+![Container: Finalizando creación]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen007.png)
+
 
 En este momento tenemos nuestro container creado, pero no está funcionando.
 
 En las dos primeras solapas, vamos a observar que :
-*Status* da el mensaje **No Remote Servers**
-*Version Configuration* tiene dos campos a completar, **Scanner**, que resolvería desplegar en el container el último paquete deployado (no vamos a usarlo) y **Version** que tiene la versión del paquete que deployamos en el conteiner.
+- *Status* da el mensaje **No Remote Servers**
+
+![Vista de Status]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen008.png)
+
+- *Version Configuration* tiene dos campos a completar:
+  - **Scanner**, que resolvería desplegar en el container el último paquete deployado (no vamos a usarlo)
+  - **Version** que tiene la versión del paquete que deployamos en el container.
+  
+![Vista de Version Configuration]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen009.png)
+
 
 *Cada vez que hagamos modificaciones en el proyecto, y esto implique crear una nueva versión del proyecto, vamos a tener que venir al conteiner y actualizar el número de versión al cual esta apuntando. De no hacerlo, como en BRMS todas las versiones quedan guardadas, a menos que intencionalmente las borremos, seguirá dando la funcionalidad anterior.*
 
@@ -120,7 +146,12 @@ Una vez que está todo listo y la versión es la correcta, podemos hacer click e
 
 Ahora en la solapa *Status*, veremos que el container **local-server-123@0.0.0.0:8080** tiene un tilde verde, lo que indica que se levanto correctamente.
 
+![Servidor corriendo]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen011.png)
+
 Haciendo click en el link que muestra el containter podremos ver mas información.
+
+![Respuesta del servidor corriendo]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen010.png)
+
 
 En este momento estamos listos para empezar a consumir la información de nuestro motor de reglas desde un medio externo.
 
@@ -139,6 +170,9 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 * Content-Type: application/xml
 * X-KIE-ContentType: xstream
 * Accept: application/xml
+
+![Postman configuracion]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen012.png)
+
 * Body:
 ```xml
 <batch-execution lookup="ksesion1">
@@ -169,7 +203,7 @@ Para enviar los mensajes desde Postman, voy a usar la siguiente configuración:
 
 </batch-execution>
 ```
-
+![Postman body]({{ site.url }}/assets/2016-12-14-configurarkieserver/imagen013.png)
 
 **Lo cual nos va a responder**
 
