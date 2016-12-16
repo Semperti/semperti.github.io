@@ -3,6 +3,7 @@ layout: post
 title:  "Blog Semperti"
 date:   2016-12-01 09:45:00
 categories: general
+image: /static/img/logo-semperti.svg
 ---
 Bienvenidos al blog técnico de Semperti.
 

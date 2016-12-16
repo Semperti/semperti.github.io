@@ -10,6 +10,8 @@ author: Nahuel Persia
 
 categories: kieserver BRMS reglas rest
 
+image: /assets/2016-12-14-configurarkieserver/imagen004.png
+
 ---
 
 # Como configurar el KIE server y usar BRMS como un servicio de reglas
@@ -140,7 +142,7 @@ En las dos primeras solapas, vamos a observar que :
 - *Version Configuration* tiene dos campos a completar:
   - **Scanner**, que resolvería desplegar en el container el último paquete deployado (no vamos a usarlo)
   - **Version** que tiene la versión del paquete que deployamos en el container.
-  
+
 ![Vista de Version Configuration](/assets/2016-12-14-configurarkieserver/imagen009.png)
 
 
