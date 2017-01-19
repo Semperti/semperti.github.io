@@ -15,12 +15,12 @@ categories: BPMS procesos servicio redhat middleware
 
 
 
-# BPMS as a SERVICE
+# BPMS as a Service
 
-## OBJETIVO DEL POST
+## Objetivo del post
 El presente documento detalla el método de instalación de Red Hat JBoss BPMS 6.x sobre Red Hat JBoss EAP 6.x, en un entorno Red Hat Enterprise Linux 7.x y disponibilizarlo como un servicio.
 
-## PRERREQUISITOS
+## Prerrequisitos
 
 Para realizar la instalación de un entorno de JBoss BPMS standalone, será necesario:
 
@@ -37,7 +37,7 @@ Una vez configurada la máquina virtual y registrado el sistema operativo (en ca
 - openssl
 - java
 
-## INSTALACIÓN
+## Instalación
 Con todos los paquetes instalados se puede proceder a la instalación de EAP y BPMS, para esto SEMPERTI desarrolló una pieza de software que la orquesta en forma automática (https://github.com/Semperti/BPMS_auto_install).
 
 Para poder utilizar esta, se requiere contar con los paquetes:
@@ -58,7 +58,7 @@ Cuando el proceso finaliza, dentro de la carpeta de BPMS_auto_install se verá q
 Para poder ejecutarlo manualmente se debe acceder a la siguiente ruta **./target/jboss-eap-6.4/bin**,
 donde se ejecuta el comando “**./standalone.sh -b 0.0.0.0**”
 
-## BPMS COMO SERVICIO
+## BPMS como servicio
 Nota antes de iniciar:
 Siempre que se haga referencia a $BPMS_auto_install, se refiere a la ruta donde BPMS_auto_install está instalado. 
 
