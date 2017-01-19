@@ -10,19 +10,19 @@ author: Nahuel Persia
 
 categories: BPMS procesos servicio redhat middleware
 
+image: /assets/2016-12-14-configurarkieserver/imagen004.png
 
 ---
 
 
 
 # BPMS as a Service
+La mayoría de las veces que necesitamos tener un JBoss BPMS como servicio, googleamos y terminamos en en los foros de Red Hat, donde la información esta completa y es de la cual me basé para armar esto, pero no incluyen todas los paquetes que se tienen que instalar si empezamos con un RHEL recién instalado. 
 
-## Objetivo del post
-El presente documento detalla el método de instalación de Red Hat JBoss BPMS 6.x sobre Red Hat JBoss EAP 6.x, en un entorno Red Hat Enterprise Linux 7.x y disponibilizarlo como un servicio.
 
 ## Prerrequisitos
 
-Para realizar la instalación de un entorno de JBoss BPMS standalone, será necesario:
+Para empezar con la instalación y condiguración de un JBoss BPMS standalone, será necesario:
 
 Una máquina virtual con las siguientes características:
 4GB de memoria RAM por lo menos
@@ -63,14 +63,12 @@ Nota antes de iniciar:
 Siempre que se haga referencia a $BPMS_auto_install, se refiere a la ruta donde BPMS_auto_install está instalado. 
 
 Para disponibilizar JBoss BPMS como un servicio se deben seguir los siguientes pasos:
-Dirigirse a la ruta “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d**”, una vez aquí se debe modificar el archivo “**jboss-as-standalone.sh**”
-reemplazando la linea 53, “**JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh**” por “**JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh" -b 0.0.0.0"**”
-
-Agregar al final del archivo “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d/jboss-as.conf**” la línea “**JBOSS_HOME=$BPMS_auto_install/target/jboss-eap-6.4**” y “**JBOSS_USER=root**”
-Crear la carpeta “**/usr/share/jboss-as**”.
-Crear la carpeta “**/etc/jboss-as**”.
-Copiar “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d/jboss-as.conf**” en “**/etc/jboss-as**”.
-Crear en la ruta “**/etc/systemd/system**” el archivo “**jbosseap6.service**” con el siguiente contenido:
+- Dirigirse a la ruta “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d**”, una vez aquí se debe modificar el archivo “**jboss-as-standalone.sh**” reemplazando la linea 53, “**JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh**” por “**JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh" -b 0.0.0.0"**”
+- Agregar al final del archivo “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d/jboss-as.conf**” la línea “**JBOSS_HOME=$BPMS_auto_install/target/jboss-eap-6.4**” y “**JBOSS_USER=root**”
+- Crear la carpeta “**/usr/share/jboss-as**”.
+- Crear la carpeta “**/etc/jboss-as**”.
+- Copiar “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d/jboss-as.conf**” en “**/etc/jboss-as**”.
+- Crear en la ruta “**/etc/systemd/system**” el archivo “**jbosseap6.service**” con el siguiente contenido:
 
 {% highlight bash %}
 [Unit]
@@ -89,3 +87,7 @@ WantedBy=multi-user.target
 {% endhighlight %}
 
 Ejecutar “**systemctl enable jbosseap6**” para que el servicio inicie al iniciar la máquina virtual.
+
+
+
+Espero que sea de utilidad, cualquier cosa que no se entienda me escribe por acá o a mi mail: nahuel.persia@semperti.com
