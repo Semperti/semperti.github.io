@@ -31,16 +31,18 @@ Una máquina virtual con las siguientes características:
 RHEL 7.x (CentOS 7.x)
 
 Una vez configurada la máquina virtual y registrado el sistema operativo (en caso de ser RHEL y no CentOS), se requieren descargar los siguientes paquetes:
-- libstdc++
-- java-devel
-- apr
-- openssl
-- java
+
+* libstdc++
+* java-devel
+* apr
+* openssl
+* java
 
 ## Instalación
 Con todos los paquetes instalados se puede proceder a la instalación de EAP y BPMS, para esto SEMPERTI desarrolló una pieza de software que la orquesta en forma automática (https://github.com/Semperti/BPMS_auto_install).
 
 Para poder utilizarla, se requiere contar con los paquetes:
+
 - jboss-bpmsuite-6.4.0.GA-installer.jar
 - jboss-eap-6.4.0-installer.jar
 - jboss-eap-6.4.7-patch.zip
@@ -63,6 +65,7 @@ Nota antes de iniciar:
 Siempre que se haga referencia a $BPMS_auto_install, se refiere a la ruta donde BPMS_auto_install está instalado. 
 
 Para disponibilizar JBoss BPMS como un servicio se deben seguir los siguientes pasos:
+
 - Dirigirse a la ruta “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d**”, una vez allí se debe modificar el archivo “**jboss-as-standalone.sh**” reemplazando la linea 53, “**JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh**” por “**JBOSS_SCRIPT=$JBOSS_HOME/bin/standalone.sh" -b 0.0.0.0"**”
 - Agregar al final del archivo “**$BPMS_auto_install/target/jboss-eap-6.4/bin/init.d/jboss-as.conf**” la línea “**JBOSS_HOME=$BPMS_auto_install/target/jboss-eap-6.4**” y “**JBOSS_USER=root**”
 - Crear la carpeta “**/usr/share/jboss-as**”.
@@ -87,7 +90,5 @@ WantedBy=multi-user.target
 {% endhighlight %}
 
 Ejecutar “**systemctl enable jbosseap6**” para que el servicio comience al iniciar la máquina virtual.
-
-
 
 Espero que sea de utilidad, cualquier cosa que no se entienda me escribe por acá o a mi mail: nahuel.persia@semperti.com
