@@ -18,7 +18,8 @@ image: /assets/2017-01-27-ibmplatinum/ibm-platinum.png
 
 Semperti alcanzó el nivel Platino en el nuevo programa Partner World de IBM, rediseñado para la era Cognitiva. Ganar el nivel más alto dentro del programa PartnerWorld, Platinum Business Partners demuestra de manera consistente capacidades y experiencia probadas en las tecnologías de IBM para ayudar a los clientes a tener éxito en su transformación digital.
 
-TODO: CITA DE MEB
+> _Nuestro modelo de negocio se basa en la honestidad y en la calidad del servicio centrado en la innovación tecnológica porque creemos que es el único camino para lograr resultados diferentes. Queremos que nuestros clientes sean exitosos, que se puedan adaptar rápidamente a las necesidades cambiantes del mercado para ofrecer la mejor solución y que puedan sacar el máximo provecho de los avances tecnológicos. En esta línea, IBM nos permite ofrecer este plus con la confianza que brinda una solución de alta calidad. Es por ello, que recibir el reconocimiento de ser el primer IBM Platinum Business Partner en el país, nos llena de orgullo porque refleja nuestro compromiso asumido en ofrecer soluciones diferenciadoras y de altos estándares de calidad en el mercado tecnológico._
+> - Maria Elena Barros, presidente de Semperti
 
 IBM incorporó la designación Platinum como parte del nuevo programa PartnerWorld que la compañía anunció en febrero pasado en la Conferencia de Liderazgo. Con cuatro niveles de especialización, IBM transformó el modelo antes centrado en producto por uno que focaliza en competencias, satisfacción del cliente e ingresos. El nivel por nosotros alcanzado reconoce a los socios que consistentemente entregan el más alto nivel de excelencia. Para obtenerlo, las organizaciones deben contar con al menos dos competencias (una de ellas en el nivel de Experto), lograr un éxito de ventas significativo, demostrar la satisfacción de sus clientes y contar con dos referencias de clientes.
 
@@ -28,5 +29,4 @@ Para obtener más información acerca de IBM PartnerWorld, un programa integral 
 
 # Camino a Platinum
 
-TODO: agregar infografia cheta
-
+![Infografía Platinum](/assets/2017-01-27-ibmplatinum/infografia-platinum.png)
