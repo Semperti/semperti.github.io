@@ -16,7 +16,7 @@
                 {
                   "icon": "fa-twitter",
                   "link": "https://twitter.com/pablohalamaj"
-                },
+                }
 
             ]
   },
@@ -29,7 +29,7 @@
                 {
                   "icon": "fa-twitter",
                   "link": "https://twitter.com/RodrigoBurdet"
-                },
+                }
 
             ]
   },
@@ -74,5 +74,13 @@
                   "link": "https://ar.linkedin.com/in/eduardo-speciali-aa26b87"
                 }
             ]
+  },
+  {
+    "nombre": "Lucas Mariani",
+    "avatar": "av-mariani",
+    "cargo": "Un cargo.",
+    "links": [
+
+    ]
   }
 ]
