@@ -3,7 +3,7 @@ layout: post
 title:  "Solución de Arquitectura IoT"
 date:   2017-03-21 11:30:00
 categories: general
-image: /static/img/logo-semperti.svg
+image: /assets/2017-03-21-solucion-iot/imagen002.png
 ---
 # IMPLEMENTACIÓN DE UNA SOLUCION DE MONITOREO DE DISPOSITIVOS
 En este post vamos a desarrollar una solución de monitoreo de dispositivos. Para desarrollar el modelo de solución tomaremos como caso modelo el monitoreo de de heladeras, las cuales se necesita que tengan una tempreratura precisa para asegurar la correcta cadena de frío de los elementos que estas contienen, evitando así su deterioro, ya sea por falta de frío, como también por su exceso. Para asegurar esto, se deberá poder consumir la información del monitoreo, enriquecerla, informar el estado de los elementos monitoreados, y el estado de los dispositivos que realizan los monitoreos. Asimismo, el sistema podrá enviar alertas y notificaciones a quien corresponda al detectarse anomalías en las variables monitoreadas o en los mismos dispositivos de monitoreo. También puede ser expandido para la detección de fallas relacionadas entre sí (ej: alza en temperatura de heladera por puerta abierta) y de fallas tempranas basadas en patrones de funcionamiento de los dispositivos.
