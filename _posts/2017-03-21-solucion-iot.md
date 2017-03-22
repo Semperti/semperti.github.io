@@ -5,8 +5,8 @@ date:   2017-03-21 11:30:00
 categories: general
 image: /assets/2017-03-21-solucion-iot/imagen002.png
 ---
-# IMPLEMENTACIÓN DE UNA SOLUCION DE MONITOREO DE DISPOSITIVOS
-En este post vamos a desarrollar una solución de monitoreo de dispositivos. Una solución de este tipo se deberá asegurar poder consumir la información del monitoreo, enriquecerla, informar el estado de los elementos monitoreados, y el estado de los dispositivos que realizan los monitoreos. Asimismo, el sistema podrá enviar alertas y notificaciones a quien corresponda al detectarse anomalías en las variables monitoreadas o en los mismos dispositivos de monitoreo. También puede ser expandido para la detección de fallas relacionadas entre sí y de fallas tempranas basadas en patrones de funcionamiento de los dispositivos.
+# IMPLEMENTACIÓN DE UNA SOLUCIÓN DE MONITOREO DE DISPOSITIVOS
+En este post vamos a desarrollar una solución de monitoreo de dispositivos. Una solución de este tipo deberá asegurar poder consumir la información del monitoreo, enriquecerla, informar el estado de los elementos monitoreados, y el estado de los dispositivos que realizan los monitoreos. Asimismo, el sistema podrá enviar alertas y notificaciones a quién corresponda al detectarse anomalías en las variables monitoreadas o en los mismos dispositivos de monitoreo. También puede ser expandido para la detección de fallas relacionadas entre sí y de fallas tempranas basadas en patrones de funcionamiento de los dispositivos.
 
 Toda esta información permitirá integrarse con los sistemas de procesos de negocios, permitiendo así la creación de flujos de mantenimiento, ayudando a la rápida detección de los puntos con problemas y agilizar las acciones correctivas ante una falla.
 Además permite dar visibilidad sobre el estado de los diferentes eventos a fin de poder tener una visión global del estado de situación como así también implementar procesos de escalado automático según sea necesario. 
