@@ -35,7 +35,7 @@ Finalmente, será el responsable de disponibilizar la información para ser cons
 Esta capa permite a los usuarios finales ver y analizar los datos recopilados de sus dispositivos. Estas vistas pueden adoptar la forma de cuadros de mando o informes de BI que pueden mostrar datos históricos o datos casi en tiempo real. Esta capa también permite la integración de la solución de IoT backend con las aplicaciones existentes para vincularse a los procesos de negocio de la empresa o flujos de trabajo.
 
 
-## PLATAFORMAS IoT
+## Plataformas IoT
 Las grandes empresas de software están en la carrera de desarrollar plataformas para IoT cada vez más poderosas, proporcionando un Cloud Gateway capaz de realizar eficientemente la comunicación y simplificar el consumo de datos.
 Durante el análisis realizado para la creación de esta propuesta se consideraron los proveedores con mayor madurez técnica, liderazgo en el mercado y con presencia local, siendo los seleccionados los siguientes tres: 
 
@@ -142,11 +142,11 @@ En Amazon AWS IoT cada mensaje se dividirán en 8 mensajes de 512 Bytes, con lo 
 **NOTA:** todos los precios utilizados en este inciso son los expuestos por las páginas de precios de cada una de las plataformas de IoT para Estados Unidos. Sólo fueron tomados a modo de realizar comparaciones entre las diferentes soluciones.
 
 
-## CONCLUSIÓN
+## Conclusión
 En conclusión estas plataformas de IoT tienen como finalidad recoger los datos de los dispositivos, analizarlos y presentarlos. La toma de decisiones en base a estos datos queda por fuera de estas plataformas. Por eso, es que es necesario si se desea que en base a estos datos se disparen procesos de negocio, por ejemplo, se deberá realizar una solución que se pueda integrar con la plataforma de IoT y así completen estas funcionalidades.
 
 
-## CUADRO COMPARATIVO
+## Cuadro Comparativo
 A continuación se presenta una tabla comparativa entre las diferentes soluciones
 
 
@@ -158,10 +158,3 @@ Seguridad|TLS (Autenticación del Server)|TLS (Autenticación mutua)|TLS
 Autenticación|Por dispositivo con token SAS|Autenticación con certificado X.509|Por dispositivo con token
 Protocolos|HTTP, AMQP, MQTT|HTTP, MQTT|HTTP, MQTT
 Hardware soportado|Intel, Raspberry Pi, Freescale, etc|Broadcom Marvell, Reneses, Texas Instruments, Microchip, Intel, Mediatek, Qualcomm, Seeed, BeagleBoard|ARM mbed, Texas Instruments, Intel, Raspberry Pi, Arduino Uno
-
-
-
-
-
-
-
