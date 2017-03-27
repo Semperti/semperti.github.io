@@ -93,6 +93,7 @@ S3: la edición S3 de IoT Hub se ha diseñado para las soluciones de IoT que gen
 
 
 Edición|Cantidad Mensajes|Precio por Mes|Disponibilidad
+-------|-----------------|--------------|--------------
 Free|8000|0|No
 S1|400.000|50|99,9%
 S2|6.000.000|500|99,9%
@@ -119,6 +120,7 @@ Advanced Security:  incluye el plan Lite y registro ilimitado de dispositivos. 
 
 
 Edición|Tier 1|Tier 2|Tier 3|Incluye
+-------|------|------|------|-------
 Lite|$0|$0|$0|20 dispositivos y 100 MB
 Standard|$0,001|$0,0007|$0,00014|Lite + ilimitados dispositivos
 Advanced|$0,0013|$0,00091|$0,000182|Standard + funciones de Analytics
@@ -149,8 +151,8 @@ A continuación se presenta una tabla comparativa entre las diferentes solucione
 
 
 
-  |Azure IoT Hub|AWS IoT|Watson IoT Platform
--|-------------|-------|-------------------
+Característica|Azure IoT Hub|AWS IoT|Watson IoT Platform
+--------------|-------------|-------|-------------------
 SDK/Lenguajes|.Net y UWP, Java, C, NodeJS|C, NodeJS, Javascript, Arduino, Java, Python|C#, C, Python, Java, NodeJS
 Seguridad|TLS (Autenticación del Server)|TLS (Autenticación mutua)|TLS
 Autenticación|Por dispositivo con token SAS|Autenticación con certificado X.509|Por dispositivo con token
