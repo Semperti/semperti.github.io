@@ -149,7 +149,8 @@ A continuación se presenta una tabla comparativa entre las diferentes solucione
 
 
 
-|Azure IoT Hub|AWS IoT|Watson IoT Platform
+ |Azure IoT Hub|AWS IoT|Watson IoT Platform
+-|-------------|-------|-------------------
 SDK/Lenguajes|.Net y UWP, Java, C, NodeJS|C, NodeJS, Javascript, Arduino, Java, Python|C#, C, Python, Java, NodeJS
 Seguridad|TLS (Autenticación del Server)|TLS (Autenticación mutua)|TLS
 Autenticación|Por dispositivo con token SAS|Autenticación con certificado X.509|Por dispositivo con token
