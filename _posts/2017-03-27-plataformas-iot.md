@@ -148,7 +148,7 @@ En conclusión estas plataformas de IoT tienen como finalidad recoger los datos 
 A continuación se presenta una tabla comparativa entre las diferentes soluciones
 
 
-
+---
  |Azure IoT Hub|AWS IoT|Watson IoT Platform
 -|-------------|-------|-------------------
 SDK/Lenguajes|.Net y UWP, Java, C, NodeJS|C, NodeJS, Javascript, Arduino, Java, Python|C#, C, Python, Java, NodeJS
@@ -156,7 +156,7 @@ Seguridad|TLS (Autenticación del Server)|TLS (Autenticación mutua)|TLS
 Autenticación|Por dispositivo con token SAS|Autenticación con certificado X.509|Por dispositivo con token
 Protocolos|HTTP, AMQP, MQTT|HTTP, MQTT|HTTP, MQTT
 Hardware soportado|Intel, Raspberry Pi, Freescale, etc|Broadcom Marvell, Reneses, Texas Instruments, Microchip, Intel, Mediatek, Qualcomm, Seeed, BeagleBoard|ARM mbed, Texas Instruments, Intel, Raspberry Pi, Arduino Uno
-
+---
 
 
 
