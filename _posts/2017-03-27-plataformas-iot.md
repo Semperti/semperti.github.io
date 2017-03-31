@@ -27,7 +27,7 @@ Todos los datos enviados por los dispositivos llegan al Cloud Gateway, quien se 
 
 Para lograr la comunicación entre los dispositivos y el Cloud Gateway, los que utilicen protocolo IP podrán hacerlo en forma directa, mientras que los que utilicen otro protocolo deberán acceder mediante un dispositivo que tendrá la función de IP Bridge.
 
-###Procesamiento de datos y análisis
+### Procesamiento de datos y análisis
 En la solución de IoT, el IoT backend es donde ocurre la mayor parte del procesamiento de datos, encargándose de recibir los datos de los dispositivos y determinar cómo procesarlos y almacenarlos, permite enviar datos a dispositivos específicos, e integrar la información con otras aplicaciones o servicios.
 
 Finalmente, será el responsable de disponibilizar la información para ser consumida por el backend.
